@@ -13,8 +13,7 @@ void	*ft_memalloc(size_t size)
   i = 0;
   while (i < size)
     {
-      ptr[i] = 'a';
-      i++;
+      ptr[i++] = 0;
     }
   return (ptr);
 }
