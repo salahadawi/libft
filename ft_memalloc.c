@@ -11,9 +11,9 @@ void	*ft_memalloc(size_t size)
   if (!(ptr = (unsigned char*)malloc(size)))
     return (NULL);
   i = 0;
-  while (i < size)
+  while (i < (int)size)
     {
       ptr[i++] = 0;
     }
-  return (ptr);
+  return ((void *)ptr);
 }
