@@ -1,10 +1,19 @@
-//ADD HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 13:38:38 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/21 13:38:54 by sadawi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h> //CHANGE TO "libft.h"
-#include <string.h> //
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {
-  free(*ap);
-  *ap = NULL;
+	free(*ap);
+	*ap = NULL;
 }

@@ -1,19 +1,28 @@
-//ADD HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 13:37:22 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/21 13:41:57 by sadawi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h> //CHANGE TO "libft.h"
-#include <string.h> //
+#include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {
-  unsigned char *ptr;
-  int i;
-  
-  if (!(ptr = (unsigned char*)malloc(size)))
-    return (NULL);
-  i = 0;
-  while (i < (int)size)
-    {
-      ptr[i++] = 0;
-    }
-  return ((void *)ptr);
+	unsigned char	*ptr;
+	int				i;
+
+	if (!(ptr = (unsigned char*)malloc(size)))
+		return (NULL);
+	i = 0;
+	while (i < (int)size)
+	{
+		ptr[i++] = 0;
+	}
+	return ((void *)ptr);
 }

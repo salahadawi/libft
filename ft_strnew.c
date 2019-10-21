@@ -1,19 +1,28 @@
-//ADD HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 13:40:26 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/21 13:41:38 by sadawi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h> //CHANGE TO "libft.h"
-#include <string.h> //
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
-  char *str;
-  int i;
-  
-  if (!(str = (char*)malloc(size + 1)))
-    return (NULL);
-  i = 0;
-  while (i <= (int)size)
-    {
-      str[i++] = '\0';
-    }
-  return (str);
+	char	*str;
+	int		i;
+
+	if (!(str = (char*)malloc(size + 1)))
+		return (NULL);
+	i = 0;
+	while (i <= (int)size)
+	{
+		str[i++] = '\0';
+	}
+	return (str);
 }

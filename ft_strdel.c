@@ -1,10 +1,19 @@
-//ADD HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 13:40:02 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/21 13:42:09 by sadawi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h> //CHANGE TO "libft.h"
-#include <string.h> //
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {
-  free(*as);
-  *as = NULL;
+	free(*as);
+	*as = NULL;
 }
