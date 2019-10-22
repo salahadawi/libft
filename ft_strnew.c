@@ -6,11 +6,12 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 13:40:26 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/21 13:41:38 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/22 17:24:47 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strnew(size_t size)
 {

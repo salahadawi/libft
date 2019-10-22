@@ -6,11 +6,11 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 17:31:41 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/21 18:27:34 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/22 17:11:34 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 static	int	ft_nbrlen(int nbr)
 {

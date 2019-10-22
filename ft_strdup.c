@@ -6,11 +6,11 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 16:43:15 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/17 17:21:23 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/22 17:20:48 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strdup(char *src)
 {

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 13:38:38 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/22 17:27:12 by sadawi           ###   ########.fr       */
+/*   Created: 2019/10/22 12:55:18 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/22 17:23:50 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_memdel(void **ap)
+char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 {
-	free(*ap);
-	*ap = NULL;
+	int		i;
+	char	*str;
+
+	i = 0;
+	str = (char*)malloc(ft_strlen(s) + 1);
+	while (s[i])
+	{
+		str[i] = (*f)(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
