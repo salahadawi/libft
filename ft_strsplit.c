@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:38:13 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/22 20:15:11 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/23 17:11:03 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,15 @@ static char	*string(char *s, char c, int index)
 	return (str = ft_strsub(s, i, j));
 }
 
-char		**ft_strsplit(char *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
 	char	**arr;
 	int		i;
 
 	i = 0;
-	if (!(arr = (char**)malloc(sizeof(arr) * count_strings(s, c) + 1)))
+	if (!(arr = (char**)malloc(sizeof(arr) * count_strings((char*)s, c) + 1)))
 		return (NULL);
-	while ((arr[i] = string(s, c, i)))
+	while ((arr[i] = string((char*)s, c, i)))
 		i++;
 	arr[i] = NULL;
 	return (arr);

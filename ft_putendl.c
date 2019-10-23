@@ -6,13 +6,13 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:12:49 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/21 16:17:46 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/23 16:50:00 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char *s)
+void	ft_putendl(char const *s)
 {
 	int i;
 

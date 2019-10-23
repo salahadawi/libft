@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 16:12:49 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 16:49:46 by sadawi           ###   ########.fr       */
+/*   Created: 2019/10/23 18:13:01 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/23 18:38:51 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int i;
+	t_list *tmp;
+	t_list *new;
 
-	i = 0;
-	while (s[i])
+	while (lst)
 	{
-		ft_putchar(s[i]);
-		i++;
+		ft_lstadd(&tmp, ft_lstnew(((*f)(lst))->content,
+			((*f)(lst))->content_size));
+		lst = lst->next;
 	}
+	while (tmp)
+	{
+		ft_lstadd(&new, ft_lstnew(((*f)(tmp))->content,
+			((*f)(tmp))->content_size));
+		tmp = tmp->next;
+	}
+	return (new);
 }

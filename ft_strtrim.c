@@ -6,14 +6,14 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:41:55 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/22 17:25:56 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/23 16:48:54 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strtrim(char *s)
+char	*ft_strtrim(char const *s)
 {
 	char	*str;
 	int		i;

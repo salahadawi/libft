@@ -6,11 +6,11 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 14:50:16 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/15 14:51:45 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/23 14:26:58 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int i;
 

@@ -6,11 +6,11 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 15:33:02 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/17 15:57:03 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/23 16:39:00 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *s1, char *s2, int n)
+char	*ft_strncat(char *s1, const char *s2, int n)
 {
 	int i;
 	int j;

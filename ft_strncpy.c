@@ -6,11 +6,11 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:01:13 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/17 15:08:26 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/23 16:38:17 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dst, char *src, int len)
+char	*ft_strncpy(char *dst, const char *src, int len)
 {
 	int i;
 

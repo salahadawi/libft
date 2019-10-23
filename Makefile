@@ -6,15 +6,17 @@
 #    By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 18:05:28 by sadawi            #+#    #+#              #
-#    Updated: 2019/10/17 12:00:52 by sadawi           ###   ########.fr        #
+#    Updated: 2019/10/21 13:33:38 by sadawi           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = libft.a
 
-SRCS =
+SRCS = *.c
 
-OBJS =
+OBJS = *.o
+
+HDRS = *.h
 
 all: $(NAME)
 
@@ -23,7 +25,7 @@ $(NAME):
 	ar rc $(NAME) $(OBJS)
 
 clean: 
-	/bin/rm -f $(OUTS)
+	/bin/rm -f $(OBJS)
 
 fclean: clean
 	/bin/rm -f $(NAME)
