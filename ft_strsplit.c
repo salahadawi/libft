@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:38:13 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 17:11:03 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/24 13:37:46 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ char		**ft_strsplit(const char *s, char c)
 		return (NULL);
 	while ((arr[i] = string((char*)s, c, i)))
 		i++;
-	arr[i] = NULL;
+	arr[i] = 0;
 	return (arr);
 }
