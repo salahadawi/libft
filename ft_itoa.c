@@ -6,10 +6,11 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 17:31:41 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/22 17:11:34 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/25 14:07:16 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 static	int	ft_nbrlen(int nbr)
@@ -33,7 +34,8 @@ char		*ft_itoa(int n)
 	char	*arr;
 
 	i = ft_nbrlen(n);
-	arr = (char *)malloc(i + 1);
+	if (!(arr = (char *)malloc(i + 1)))
+		return (NULL);
 	if (n < 0)
 	{
 		arr[0] = '-';

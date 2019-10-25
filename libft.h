@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:27:35 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/24 13:33:58 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/25 16:23:34 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 
 int					ft_isalpha(int c);
 

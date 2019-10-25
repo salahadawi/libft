@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 18:58:51 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 16:48:36 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/25 14:08:14 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *str;
 
-	str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!(str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+		return (NULL);
 	ft_strcpy(str, s1);
 	ft_strcat(str, s2);
 	return (str);

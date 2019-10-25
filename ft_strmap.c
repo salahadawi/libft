@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 12:55:18 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 16:44:30 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/25 14:09:51 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*str;
 
 	i = 0;
-	str = (char*)malloc(ft_strlen(s) + 1);
+	if (!(str = (char*)malloc(ft_strlen(s) + 1)))
+		return (NULL);
 	while (*s)
 	{
 		str[i] = (*f)(*s++);

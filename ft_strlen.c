@@ -6,11 +6,13 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 14:50:16 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 14:26:58 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/25 16:23:13 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int i;
 
