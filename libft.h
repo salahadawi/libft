@@ -141,6 +141,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 
+void				ft_strfill(char *str, char c);
+
 int				ft_lstevery(t_list *lst, int (*f)(t_list *elem));
 
 void				ft_putlst(t_list *lst);
