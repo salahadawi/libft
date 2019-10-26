@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
@@ -18,7 +19,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	i = 0;
-	return (NULL);
+	if (!(str = (char*)malloc(len + 1)))
+		return (NULL);
 	while (len)
 	{
 		str[i++] = s[start++];
