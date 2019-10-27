@@ -147,4 +147,6 @@ int				ft_lstevery(t_list *lst, int (*f)(t_list *elem));
 
 void				ft_putlst(t_list *lst);
 
+t_list				*ft_strsplitlst(const char *str, char c);
+
 #endif
