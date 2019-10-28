@@ -1,13 +1,22 @@
-//ADD HEADER
-//CHECK NORM, FIX TABULATIONS
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putlst.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 13:41:23 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/28 13:42:12 by sadawi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_putlst(t_list *lst)
 {
-  while(lst)
-    {
-      ft_putendl(lst->content);
-      lst = lst->next;
-    }
+	while (lst)
+	{
+		ft_putendl(lst->content);
+		lst = lst->next;
+	}
 }

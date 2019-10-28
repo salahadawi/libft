@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:54:37 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 17:05:01 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/28 16:20:11 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	int i;
 
+	if (!(src || dst))
+		return (dst);
 	i = 0;
 	while (i < (int)n)
 	{

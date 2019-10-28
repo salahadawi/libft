@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:54:37 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 17:04:11 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/28 15:43:02 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	int i;
 
 	i = 0;
-	while (i < (int)n && ((char *)src)[i])
+	while (i < (int)n)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		if (((char *)src)[i] == (unsigned char)c)
-			return (dst + i + 1);
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		if (((unsigned char*)dst)[i] == (unsigned char)c)
+			return ((void*)dst + i + 1);
 		i++;
 	}
 	return (NULL);

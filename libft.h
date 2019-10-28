@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:27:35 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/25 16:23:34 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/28 13:49:11 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,10 +143,14 @@ t_list				*ft_lstnew(void const *content, size_t content_size);
 
 void				ft_strfill(char *str, char c);
 
-int				ft_lstevery(t_list *lst, int (*f)(t_list *elem));
+int					ft_lstevery(t_list *lst, int (*f)(t_list *elem));
 
 void				ft_putlst(t_list *lst);
 
 t_list				*ft_strsplitlst(const char *str, char c);
+
+void				ft_swap(int *a, int *b);
+
+void				ft_foreach(int *tab, int length, void(*f)(int));
 
 #endif

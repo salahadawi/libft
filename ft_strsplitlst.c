@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:38:13 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/24 13:37:46 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/28 13:42:49 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static char	*string(char *s, char c, int index)
 {
-	int		i;
-	int		j;
-	int		strindex;
+	int	i;
+	int j;
+	int strindex;
 
 	i = 0;
 	j = 0;
@@ -43,24 +43,24 @@ t_list		*ft_strsplitlst(const char *s, char c)
 	t_list	*list;
 	t_list	*first;
 	char	*str;
-	int	i;
+	int		i;
 
 	i = 0;
 	first = NULL;
 	while ((str = string((char*)s, c, i)))
-	  {
-	    if (!first)
-	    {
-	      list = ft_lstnew(str, ft_strlen(str));
-	      first = list;
-	    }
-	    else
-	    {
-	      list->next = ft_lstnew(str, ft_strlen(str));
-	      list = list->next;
-	    }
-	    i++;
-	    ft_strdel(&str);
-	  }
+	{
+		if (!first)
+		{
+			list = ft_lstnew(str, ft_strlen(str));
+			first = list;
+		}
+		else
+		{
+			list->next = ft_lstnew(str, ft_strlen(str));
+			list = list->next;
+		}
+		i++;
+		ft_strdel(&str);
+	}
 	return (first);
 }

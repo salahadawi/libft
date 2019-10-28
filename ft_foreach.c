@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 14:57:01 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/28 19:02:38 by sadawi           ###   ########.fr       */
+/*   Created: 2019/10/15 18:53:39 by sadawi            #+#    #+#             */
+/*   Updated: 2019/10/15 19:12:44 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int i;
 
 	i = 0;
-	while (i < (int)n)
+	while (i < length)
 	{
-		if (((unsigned char*)s1)[i] != ((unsigned char*)s2)[i])
-			return (((unsigned char*)s1)[i] - ((unsigned char*)s2)[i]);
+		(*f)(tab[i]);
 		i++;
 	}
-	return (0);
 }
