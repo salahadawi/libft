@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:41:55 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 16:48:54 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/29 18:26:32 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ char	*ft_strtrim(char const *s)
 	while (s[j] == ' ' || s[j] == '\t' || s[j] == '\n')
 		j++;
 	if (j == len)
-		return (str = "");
+	{
+		if (!(str = (char*)malloc(1)))
+			return (NULL);
+		str[0] = '\0';
+		return (str);
+	}
 	while (s[len - i - 1] == ' ' || s[len - i - 1] == '\t'
 		|| s[len - i - 1] == '\n')
 		i++;

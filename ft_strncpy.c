@@ -6,21 +6,23 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:01:13 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 16:38:17 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/29 13:36:02 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dst, const char *src, int len)
+#include "libft.h"
+
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	int i;
 
 	i = 0;
-	while (src[i] && i < len)
+	while (src[i] && i < (int)len)
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	while (i < len)
+	while (i < (int)len)
 	{
 		dst[i] = '\0';
 		i++;
