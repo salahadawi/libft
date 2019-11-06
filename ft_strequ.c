@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:10:50 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/23 16:43:58 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/11/06 13:50:43 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	if (ft_strcmp(s1, s2))
-		return (0);
-	return (1);
+	return (!(ft_strcmp(s1, s2)));
 }

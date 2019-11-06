@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 14:50:16 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/29 13:40:18 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/10/30 18:02:47 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ size_t	ft_strlen(const char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	return (i++);
+	return (i);
 }

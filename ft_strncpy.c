@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:01:13 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/29 13:36:02 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/11/06 13:52:44 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while (src[i] && i < (int)len)
+	while (src[i] && i < len)
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	while (i < (int)len)
+	while (i < len)
 	{
 		dst[i] = '\0';
 		i++;

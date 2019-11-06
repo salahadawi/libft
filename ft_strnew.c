@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 13:40:26 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/22 17:24:47 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/11/06 13:53:44 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 char	*ft_strnew(size_t size)
 {
 	char	*str;
-	int		i;
+	size_t	i;
 
 	if (!(str = (char*)malloc(size + 1)))
 		return (NULL);
 	i = 0;
-	while (i <= (int)size)
+	while (i <= size)
 	{
 		str[i++] = '\0';
 	}

@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 13:37:22 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/22 17:12:28 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/11/06 13:44:30 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 void	*ft_memalloc(size_t size)
 {
 	unsigned char	*ptr;
-	int				i;
+	size_t			i;
 
 	if (!(ptr = (unsigned char*)malloc(size)))
 		return (NULL);
 	i = 0;
-	while (i < (int)size)
+	while (i < size)
 	{
 		ptr[i++] = 0;
 	}
