@@ -7,7 +7,7 @@ int ft_nbrlen(int nbr)
   i = 0;
   if (nbr < 0)
     i++;
-  while (nbr || i == 0)
+  while (nbr)
     {
       nbr /= 10;
       i++;
