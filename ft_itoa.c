@@ -13,12 +13,27 @@
 #include "libft.h"
 #include <stdlib.h>
 
+static int	ft_nbrlen2(int nbr)
+{
+	int i;
+
+	i = 0;
+	if (nbr < 0)
+  	i++;
+	while (nbr || i == 0)
+	{
+		nbr /= 10;
+		i++;
+	}
+	return (i);
+}
+
 char		*ft_itoa(int n)
 {
 	int		i;
 	char	*arr;
 
-	i = ft_nbrlen(n);
+	i = ft_nbrlen2(n);
 	if (!(arr = (char *)malloc(i + 1)))
 		return (NULL);
 	if (n < 0)
