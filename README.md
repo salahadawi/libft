@@ -1,4 +1,4 @@
-# libft - Our first own library
+# libft - Our first library
 The aim of this project was to code a C library that we could use in our future projects.
 
 ## How to use:
