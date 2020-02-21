@@ -1,4 +1,4 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,36 +6,58 @@
 #    By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 18:05:28 by sadawi            #+#    #+#              #
-#    Updated: 2019/10/28 13:48:04 by sadawi           ###   ########.fr        #
+#    Updated: 2020/02/21 17:02:00 by sadawi           ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
-ft_isdigit.c ft_isprint.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
-ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_memalloc.c ft_memccpy.c ft_memchr.c \
-ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_putchar.c \
-ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c \
-ft_putstr.c ft_putstr_fd.c ft_strcat.c ft_strchr.c ft_strclr.c ft_strcmp.c \
-ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c \
-ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c \
-ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
-ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
-ft_putlst.c ft_lstevery.c ft_strfill.c ft_strsplitlst.c ft_swap.c ft_foreach.c \
-
-OBJS = *.o
+CLIBFT = libft/ft_atoi.c libft/ft_bzero.c libft/ft_isalnum.c \
+libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c \
+libft/ft_itoa.c libft/ft_lstadd.c libft/ft_lstdel.c libft/ft_lstdelone.c \
+libft/ft_lstiter.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_memalloc.c \
+libft/ft_memccpy.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c \
+libft/ft_memdel.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar.c \
+libft/ft_putchar_fd.c libft/ft_putendl.c libft/ft_putendl_fd.c \
+libft/ft_putnbr.c libft/ft_putnbr_fd.c libft/ft_putstr.c libft/ft_putstr_fd.c \
+libft/ft_strcat.c libft/ft_strchr.c libft/ft_strclr.c libft/ft_strcmp.c \
+libft/ft_strcpy.c libft/ft_strdel.c libft/ft_strdup.c libft/ft_strequ.c \
+libft/ft_striter.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c \
+libft/ft_strlen.c libft/ft_strmap.c libft/ft_strmapi.c libft/ft_strncat.c \
+libft/ft_strncmp.c libft/ft_strncpy.c libft/ft_strnequ.c libft/ft_strnew.c \
+libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strsplit.c libft/ft_strstr.c \
+libft/ft_strsub.c libft/ft_strtrim.c libft/ft_tolower.c libft/ft_toupper.c \
+libft/ft_putlst.c libft/ft_lstevery.c libft/ft_strfill.c \
+libft/ft_strsplitlst.c libft/ft_swap.c libft/ft_longlen.c libft/ft_foreach.c \
+libft/ft_putlong.c libft/ft_ulonglen.c libft/ft_putulong.c \
+libft/ft_itoa_base.c libft/ft_itoa_base_low.c libft/ft_itoa_base_ul.c \
+libft/ft_itoa_base_ul_low.c libft/ft_putdouble.c libft/ft_itoa_double.c \
+libft/ft_chartostr.c libft/ft_atoilong.c libft/ft_strjoinfree.c \
+libft/ft_isdigit_neg.c libft/ft_strcatfree.c
+CFT_PRINTF = ft_printf/ft_printf.c ft_printf/handle_digit_datatypes.c \
+ft_printf/handle_string_datatypes.c ft_printf/handle_flags.c \
+ft_printf/handle_format_flags.c ft_printf/handle_width.c ft_printf/handle_char.c
+CGET_NEXT_LINE = get_next_line/get_next_line.c
+SRCS= $(addprefix srcs/, $(CLIBFT)) $(addprefix srcs/, $(CFT_PRINTF)) \
+$(addprefix srcs/, $(CGET_NEXT_LINE))
+OBJS=$(addprefix objs/, $(notdir $(SRCS:.c=.o)))
+FLAGS=-Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): libft.h
-	gcc -c -Wall -Werror -Wextra $(SRCS)
-	ar rc $(NAME) $(OBJS)
+$(NAME):
+	@echo Compiling $(NAME)...
+	@gcc $(FLAGS) -c -I includes $(SRCS)
+	@mkdir objs
+	@mv $(notdir $(SRCS:.c=.o)) objs
+	@ar rc $(NAME) $(OBJS)
+	@echo $(NAME) compiled succesfully!
 
-clean: 
-	/bin/rm -f $(OBJS)
+clean:
+	@/bin/rm -f $(OBJS)
+	@rm -rf objs
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all

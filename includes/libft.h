@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:27:35 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/29 13:50:58 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/02/21 16:30:48 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,5 +153,33 @@ t_list				*ft_strsplitlst(const char *str, char c);
 void				ft_swap(int *a, int *b);
 
 void				ft_foreach(int *tab, int length, void(*f)(int));
+
+int					ft_longlen(long int nbr);
+
+void				ft_putlong(long int n);
+
+void				ft_putulong(unsigned long int n);
+
+char				*ft_itoa_base(long n, int base);
+
+char				*ft_itoa_base_low(long n, int base);
+
+char				*ft_itoa_base_ul(unsigned long n, int base);
+
+char				*ft_itoa_base_ul_low(unsigned long n, int base);
+
+void				ft_putdouble(long double d, int precision);
+
+char				*ft_itoa_double(long double d, int precision);
+
+char				*ft_chartostr(char c);
+
+long				ft_atoilong(const char *str);
+
+char				*ft_strjoinfree(char *s1, char *s2);
+
+int					ft_isdigit_neg(char *str);
+
+char				*ft_strcatfree(char *s1, const char *s2);
 
 #endif
