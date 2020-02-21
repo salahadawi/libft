@@ -1,5 +1,5 @@
-# libft - Our first library
-The aim of this project was to code a C library that we could use in our future projects.
+# libft - Coding our first basic C library
+The aim of this project was to code a basic C library that we could use in our future projects.
 
 ## How to use:
 1. Clone the repository.
