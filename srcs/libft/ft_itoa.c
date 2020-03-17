@@ -34,7 +34,7 @@ char		*ft_itoa(int n)
 	char	*arr;
 
 	i = ft_nbrlen(n);
-	if (!(arr = (char *)ft_malloc(i + 1)))
+	if (!(arr = (char *)malloc(i + 1)))
 		return (NULL);
 	if (n < 0)
 	{
