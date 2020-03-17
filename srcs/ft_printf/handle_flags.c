@@ -6,21 +6,20 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2020/01/08 15:57:13 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/12/18 13:15:15 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int		handle_flags(const char **format, va_list *args)
+int		handle_flags(const char **format, va_list *args, t_data *data)
 {
 	char	*flag;
 	int		i;
 	int		amount;
 
 	i = 1;
-	amount = 0;
 	while (!ft_strchr("cspdiouxXf%", (*format)[i]) && (*format)[i] != '\0')
 		i++;
 	if (!(*format)[i])
@@ -29,7 +28,7 @@ int		handle_flags(const char **format, va_list *args)
 	if (check_flag(flag))
 	{
 		*format += i;
-		amount = print_flag(flag, args);
+		amount = print_flag(flag, args, data);
 	}
 	free(flag);
 	return (amount - 1);
@@ -63,16 +62,16 @@ int		check_flag(char *flag)
 	return (0);
 }
 
-int		print_flag(char *flag, va_list *args)
+int		print_flag(char *flag, va_list *args, t_data *data)
 {
-	int len;
+	int	len;
 
-	if (!(len = handle_signed(flag, args)))
-		if (!(len = handle_unsigned(flag, args)))
-			if (!(len = handle_pointer(flag, args)))
-				if (!(len = handle_base(flag, args)))
-					if (!(len = handle_float(flag, args)))
-						if (!(len = handle_percent(flag)))
+	if (!(len = handle_signed(flag, args, data)))
+		if (!(len = handle_unsigned(flag, args, data)))
+			if (!(len = handle_pointer(flag, args, data)))
+				if (!(len = handle_base(flag, args, data)))
+					if (!(len = handle_float(flag, args, data)))
+						if (!(len = handle_percent(flag, data)))
 							return (0);
 	return (len);
 }

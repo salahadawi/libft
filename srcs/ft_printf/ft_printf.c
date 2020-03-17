@@ -6,29 +6,80 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2020/01/08 15:56:39 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/12/17 18:45:54 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int		ft_printf(const char *format, ...)
+/*
+	ft_fprintf prints to specified file descriptor.
+*/
+
+int		ft_fprintf(int fd, const char *format, ...)
 {
 	va_list	args;
-	int		amount;
+	t_data *data;
+	int amount;
 
 	amount = 0;
+	init_data(&data);
 	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
-			amount += handle_flags(&format, &args);
+			amount += handle_flags(&format, &args, data);
 		else
-			ft_putchar(*format);
+			data->output = join_char_to_str(data->output, *format);
 		format++;
 		amount++;
 	}
+	write(fd, data->output, ft_strlen(data->output));
+	return (amount);
+}
+
+/*
+	ft_sprintf returns the string instead of printing.
+*/
+
+char	*ft_sprintf(const char *format, ...)
+{
+	va_list	args;
+	t_data *data;
+
+	init_data(&data);
+	va_start(args, format);
+	while (*format)
+	{
+		if (*format == '%')
+			handle_flags(&format, &args, data);
+		else
+			data->output = join_char_to_str(data->output, *format);
+		format++;
+	}
+	return (data->output);
+}
+
+int		ft_printf(const char *format, ...)
+{
+	va_list	args;
+	t_data *data;
+	int		amount;
+
+	amount = 0;
+	init_data(&data);
+	va_start(args, format);
+	while (*format)
+	{
+		if (*format == '%')
+			amount += handle_flags(&format, &args, data);
+		else
+			data->output = join_char_to_str(data->output, *format);
+		format++;
+		amount++;
+	}
+	write(1, data->output, ft_strlen(data->output));
 	return (amount);
 }
 
@@ -45,18 +96,17 @@ char	*toaddress(unsigned long n)
 	return (address);
 }
 
-int		handle_output(char **output, char *flag)
+int		handle_output(char **output, char *flag, t_data *data)
 {
 	int len;
 
 	handle_flag(output, flag);
 	if (ft_strchr(flag, 'c'))
-		len = handle_char_output(output, flag);
+		len = handle_char_output(output, flag, data);
 	else
 	{
-		ft_putstr(*output);
 		len = ft_strlen(*output);
+		data->output = ft_strjoinfree(data->output, *output);
 	}
-	free(*output);
 	return (len);
 }

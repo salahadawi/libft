@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2020/01/08 15:57:34 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/12/18 14:24:31 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		handle_char_width(char **output, char *flag, int width)
 	return (width);
 }
 
-int		handle_char_output(char **output, char *flag)
+int		handle_char_output(char **output, char *flag, t_data *data)
 {
 	int width;
 	int i;
@@ -40,6 +40,6 @@ int		handle_char_output(char **output, char *flag)
 		width = ft_atoi(flag + i);
 	i = 0;
 	while (width > i)
-		ft_putchar((*output)[i++]);
+		data->output = join_char_to_str(data->output, (*output)[i++]);
 	return (width);
 }

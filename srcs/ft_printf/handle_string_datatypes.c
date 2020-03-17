@@ -6,14 +6,14 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2020/01/08 15:57:04 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/12/18 14:29:06 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int	handle_base(char *flag, va_list *args)
+int	handle_base(char *flag, va_list *args, t_data *data)
 {
 	char			*output;
 	unsigned long	tmp;
@@ -36,10 +36,10 @@ int	handle_base(char *flag, va_list *args)
 		output = ft_itoa_base_ul(tmp, 16);
 	else
 		output = ft_itoa_base_ul_low(tmp, 8);
-	return (handle_output(&output, flag));
+	return (handle_output(&output, flag, data));
 }
 
-int	handle_pointer(char *flag, va_list *args)
+int	handle_pointer(char *flag, va_list *args, t_data *data)
 {
 	char			*output;
 	unsigned long	tmp;
@@ -57,10 +57,10 @@ int	handle_pointer(char *flag, va_list *args)
 	}
 	else
 		return (0);
-	return (handle_output(&output, flag));
+	return (handle_output(&output, flag, data));
 }
 
-int	handle_percent(char *flag)
+int	handle_percent(char *flag, t_data *data)
 {
 	char	*output;
 
@@ -68,7 +68,7 @@ int	handle_percent(char *flag)
 		output = ft_strdup("%");
 	else
 		return (0);
-	return (handle_output(&output, flag));
+	return (handle_output(&output, flag, data));
 }
 
 int	check_flag_thrice(char *flag, char *s1, char *s2, char *s3)

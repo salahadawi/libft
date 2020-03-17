@@ -36,7 +36,8 @@ libft/ft_chartostr.c libft/ft_atoilong.c libft/ft_strjoinfree.c \
 libft/ft_isdigit_neg.c libft/ft_strcatfree.c
 CFT_PRINTF = ft_printf/ft_printf.c ft_printf/handle_digit_datatypes.c \
 ft_printf/handle_string_datatypes.c ft_printf/handle_flags.c \
-ft_printf/handle_format_flags.c ft_printf/handle_width.c ft_printf/handle_char.c
+ft_printf/handle_format_flags.c ft_printf/handle_width.c \
+ft_printf/handle_char.c ft_printf/handle_data.c
 CGET_NEXT_LINE = get_next_line/get_next_line.c
 SRCS= $(addprefix srcs/, $(CLIBFT)) $(addprefix srcs/, $(CFT_PRINTF)) \
 $(addprefix srcs/, $(CGET_NEXT_LINE))

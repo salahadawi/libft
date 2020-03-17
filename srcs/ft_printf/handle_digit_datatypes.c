@@ -6,14 +6,14 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2020/01/08 15:56:57 by sadawi           ###   ########.fr       */
+/*   Updated: 2019/12/17 18:06:17 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int	handle_signed(char *flag, va_list *args)
+int	handle_signed(char *flag, va_list *args, t_data *data)
 {
 	char	*output;
 	long	tmp;
@@ -34,10 +34,10 @@ int	handle_signed(char *flag, va_list *args)
 		return (0);
 	if (!ft_strchr(flag, 'c'))
 		output = ft_itoa_base(tmp, 10);
-	return (handle_output(&output, flag));
+	return (handle_output(&output, flag, data));
 }
 
-int	handle_unsigned(char *flag, va_list *args)
+int	handle_unsigned(char *flag, va_list *args, t_data *data)
 {
 	char			*output;
 	unsigned long	tmp;
@@ -53,10 +53,10 @@ int	handle_unsigned(char *flag, va_list *args)
 	else
 		return (0);
 	output = ft_itoa_base_ul(tmp, 10);
-	return (handle_output(&output, flag));
+	return (handle_output(&output, flag, data));
 }
 
-int	handle_float(char *flag, va_list *args)
+int	handle_float(char *flag, va_list *args, t_data *data)
 {
 	char		*output;
 	long double tmp;
@@ -73,5 +73,5 @@ int	handle_float(char *flag, va_list *args)
 	else
 		return (0);
 	output = ft_itoa_double(tmp, precision);
-	return (handle_output(&output, flag));
+	return (handle_output(&output, flag, data));
 }
