@@ -11,13 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "	if (n < 0)
-	{
-		arr[0] = '-';
-	}	if (n < 0)
-	{
-		arr[0] = '-';
-	}libft.h"
+#include "libft.h"
 
 t_data	*join_data(t_data *data1, t_data *data2)
 {
