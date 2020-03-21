@@ -60,7 +60,10 @@ int			find_nl(t_fd **buf)
 		if (!extend_buf((*buf)->fd, &(*buf)->str))
 		{
 			if (ft_strequ((*buf)->str, ""))
+			{
+				free((*buf)->str);
 				return (1);
+			}
 			return (0);
 		}
 	return (0);
