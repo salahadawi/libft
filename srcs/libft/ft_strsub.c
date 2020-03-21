@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 15:20:24 by sadawi            #+#    #+#             */
-/*   Updated: 2019/11/06 13:55:21 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/03/21 15:37:38 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!(str = (char*)malloc(len + 1)))
+	if (!(str = (char*)ft_memalloc(len + 1)))
 		return (NULL);
 	while (len)
 	{

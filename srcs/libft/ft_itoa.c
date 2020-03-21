@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 17:31:41 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/25 14:07:16 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/03/21 15:40:03 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char		*ft_itoa(int n)
 	char	*arr;
 
 	i = ft_nbrlen(n);
-	if (!(arr = (char *)malloc(i + 1)))
+	if (!(arr = (char *)ft_memalloc(i + 1)))
 		return (NULL);
 	if (n < 0)
 	{

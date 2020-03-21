@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2019/12/17 18:45:54 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/03/21 15:34:45 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 int		ft_fprintf(int fd, const char *format, ...)
 {
 	va_list	args;
-	t_data *data;
-	int amount;
+	t_data	*data;
+	int		amount;
 
 	amount = 0;
 	init_data(&data);
@@ -36,6 +36,8 @@ int		ft_fprintf(int fd, const char *format, ...)
 		amount++;
 	}
 	write(fd, data->output, ft_strlen(data->output));
+	free(data->output);
+	free(data);
 	return (amount);
 }
 
@@ -46,7 +48,8 @@ int		ft_fprintf(int fd, const char *format, ...)
 char	*ft_sprintf(const char *format, ...)
 {
 	va_list	args;
-	t_data *data;
+	t_data	*data;
+	char	*output;
 
 	init_data(&data);
 	va_start(args, format);
@@ -58,7 +61,9 @@ char	*ft_sprintf(const char *format, ...)
 			data->output = join_char_to_str(data->output, *format);
 		format++;
 	}
-	return (data->output);
+	output = data->output;
+	free(data);
+	return (output);
 }
 
 int		ft_printf(const char *format, ...)
@@ -80,6 +85,8 @@ int		ft_printf(const char *format, ...)
 		amount++;
 	}
 	write(1, data->output, ft_strlen(data->output));
+	free(data->output);
+	free(data);
 	return (amount);
 }
 
@@ -88,7 +95,7 @@ char	*toaddress(unsigned long n)
 	char *address;
 	char *tmp;
 
-	address = (char*)malloc(15);
+	address = (char*)ft_memalloc(15);
 	ft_strcpy(address, "0x");
 	tmp = ft_itoa_base_ul_low(n, 16);
 	ft_strcat(address, tmp);

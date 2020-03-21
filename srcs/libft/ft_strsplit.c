@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:38:13 by sadawi            #+#    #+#             */
-/*   Updated: 2019/10/24 13:37:46 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/03/21 15:37:28 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ char		**ft_strsplit(const char *s, char c)
 	int		i;
 
 	i = 0;
-	if (!(arr = (char**)malloc(sizeof(arr) * count_strings((char*)s, c) + 1)))
+	if (!(arr = (char**)ft_memalloc(sizeof(arr) *
+		count_strings((char*)s, c) + 1)))
 		return (NULL);
 	while ((arr[i] = string((char*)s, c, i)))
 		i++;
