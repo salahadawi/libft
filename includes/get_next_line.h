@@ -6,14 +6,14 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 14:36:39 by sadawi            #+#    #+#             */
-/*   Updated: 2020/02/20 13:15:37 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/03/23 13:16:02 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 100000
+# define BUFF_SIZE 128
 
 typedef struct		s_fd
 {
