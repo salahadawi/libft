@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2020/03/21 15:34:45 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/03/28 21:00:08 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 
 /*
-	ft_fprintf prints to specified file descriptor.
+**	ft_fprintf prints to specified file descriptor.
 */
 
 int		ft_fprintf(int fd, const char *format, ...)
@@ -42,7 +42,7 @@ int		ft_fprintf(int fd, const char *format, ...)
 }
 
 /*
-	ft_sprintf returns the string instead of printing.
+**	ft_sprintf returns the string instead of printing.
 */
 
 char	*ft_sprintf(const char *format, ...)
@@ -69,7 +69,7 @@ char	*ft_sprintf(const char *format, ...)
 int		ft_printf(const char *format, ...)
 {
 	va_list	args;
-	t_data *data;
+	t_data	*data;
 	int		amount;
 
 	amount = 0;
