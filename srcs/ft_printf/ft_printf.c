@@ -6,7 +6,7 @@
 /*   By: sadawi <sadawi@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 14:26:55 by sadawi            #+#    #+#             */
-/*   Updated: 2020/03/28 21:00:08 by sadawi           ###   ########.fr       */
+/*   Updated: 2020/04/12 20:50:42 by sadawi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,10 @@ int		handle_output(char **output, char *flag, t_data *data)
 
 	handle_flag(output, flag);
 	if (ft_strchr(flag, 'c'))
+	{
 		len = handle_char_output(output, flag, data);
+		free(*output);
+	}
 	else
 	{
 		len = ft_strlen(*output);
