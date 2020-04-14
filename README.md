@@ -13,3 +13,6 @@ My other projects, [get_next_line](https://github.com/salahadawi/get_next_line) 
 	``` make all ```
   
 The result is a library called libft.a, which can then be linked to a project.
+
+## init.py
+init.py is a quick script to delete files that are not needed when libft is cloned and used in another repo. Files currently deleted are README.md, .git directory and it's contents, and the init.py script itself, which is not needed after being executed once.
