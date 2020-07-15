@@ -25,11 +25,9 @@ int		handle_flags(const char **format, va_list *args, t_data *data)
 	if (!(*format)[i])
 		return (0);
 	flag = ft_strsub(*format, 1, i);
-	if (check_flag(flag))
-	{
-		*format += i;
-		amount = print_flag(flag, args, data);
-	}
+	check_flag(flag);
+	*format += i;
+	amount = print_flag(flag, args, data);
 	free(flag);
 	return (amount - 1);
 }
