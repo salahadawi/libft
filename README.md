@@ -6,7 +6,7 @@ My other projects, [get_next_line](https://github.com/salahadawi/get_next_line) 
 ## How to use:
 1. Clone the repository.
 
-	``` git clone https://github.com/Hahli144/libft.git ```
+	``` git clone https://github.com/salahadawi/libft.git ```
 
 2. Compile the library
 
